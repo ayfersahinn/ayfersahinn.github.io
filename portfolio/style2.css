@@ -1,0 +1,199 @@
+:root {
+    --white-color: #f7e4ed;
+    --primary-color: #A12559;
+    --secondary-color: #F09C2A;
+    --gray-color: #9e9c9c;
+    --dark-gray: #292929;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Prompt", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    background-color: #18181a;
+    color: var(--white-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+ul {
+    list-style: none;
+}
+
+
+.container {
+    padding: 3.2rem 4.8rem;
+}
+
+/* navbar */
+#navbar {
+    display: flex;
+    font-size: 2.4rem;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.2rem 4.8rem;
+}
+
+#navbar .logo {
+    font-weight: 500;
+    color: var(--primary-color);
+    transition: all .3s ease-in;
+}
+
+#navbar .logo:hover {
+    transform: scale(1.1);
+}
+
+#navbar .logo span {
+    color: var(--white-color);
+}
+
+#navbar .nav-items {
+    font-size: 1.8rem;
+    border-radius: 1.2rem;
+    display: flex;
+}
+
+.nav-items .active {
+    border-bottom: 2px solid var(--primary-color) !important;
+    color: var(--white-color) !important;
+}
+
+.nav-items .nav-item a {
+    color: var(--gray-color);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.nav-items .nav-item a:hover {
+    color: var(--white-color);
+    background-color: var(--dark-gray);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* main-header */
+.main-header {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 0;
+}
+
+.main-header .main-text {
+    grid-column: 1/ span 3;
+    text-align: center;
+    align-self: start;
+}
+
+.main-header .main-text h1 {
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.main-header .main-text h3 {
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.main-header .main-text h1 span {
+    color: var(--secondary-color);
+}
+
+.main-header .intro-notes {}
+
+.main-header .intro-notes p {
+    background-color: var(--dark-gray);
+    border-left: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+    border-radius: 1.2rem;
+    padding: 1.2rem;
+    margin-top: 2.4rem;
+    display: inline-block;
+}
+
+.main-header .image-box {
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.main-header .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-header .skills {
+    color: var(--dark-gray);
+    position: relative;
+    width: 100%;
+
+}
+
+.main-header .skill-1 {
+    top: 5%;
+    right: 40%;
+}
+
+.main-header .skill-1:hover {
+    top: calc(5% - 5px);
+}
+
+.main-header .skill-2 {
+    top: 30%;
+    right: 20%;
+    background-color: var(--dark-gray) !important;
+    color: var(--white-color);
+    border: 1px solid var(--secondary-color);
+    transition: all .3s ease;
+}
+
+.main-header .skill-2:hover {
+    top: calc(30% - 5px);
+}
+
+.main-header .skill-3 {
+    top: 55%;
+    right: 40%;
+}
+
+.main-header .skill-3:hover {
+    top: calc(55% - 5px);
+}
+
+.main-header .skills p {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    transition: all .3s ease;
+    border: 1px solid transparent;
+
+}
+
+.main-header .skills p:hover {
+    background-color: var(--dark-gray);
+    color: var(--white-color);
+    border: 1px solid var(--secondary-color);
+}

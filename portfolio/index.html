@@ -44,9 +44,10 @@
                         <p><i class="fa-regular fa-gem"></i>Build responsive and user-friendly web
                             applications.</p>
                     </div>
-                    <a class="btn animate__animated animate__fadeInDown" href="https://github.com/ayfersahinn"><i class="fa-brands fa-github"></i>View on GitHub</a>
-                    <div class="skills animate__animated animate__fadeInDown">
-                        <p class="skill-item ">Frontend Developer | Backend Developer | UI-UX Designer</p>
+                    <a class="btn animate__animated animate__fadeInDown" href="https://github.com/ayfersahinn"><i
+                            class="fa-brands fa-github"></i>View on GitHub</a>
+                    <div class="jobs animate__animated animate__fadeInDown">
+                        <p class="job-item ">Frontend Developer | Backend Developer | UI-UX Designer</p>
                     </div>
                 </div>
             </div>
@@ -74,7 +75,7 @@
         <!-- experience -->
         <section id="experience">
             <div class="container ">
-                <h2 class="section-title">Experience</h2>
+                <h2 class="section-title">Work Experience</h2>
                 <div class="bottom-line"></div>
                 <div class="timeline ">
                     <div class="checkpoint">
@@ -108,7 +109,10 @@
                             </div>
                             <p class="project-name"><strong>Project:</strong> e-SHOES</p>
                             <p class="company-name"><strong>Company:</strong> İlerleyen Technology Ltd. Co</p>
-                            <p class="description">I developed an e-commerce website called <strong>e-SHOES</strong>, a shoe store with a fully functional admin panel. The project included features such as product management, shopping cart, and user authentication. Utilized <strong>HTML</strong>,
+                            <p class="description">I developed an e-commerce website called <strong>e-SHOES</strong>, a
+                                shoe store with a fully functional admin panel. The project included features such as
+                                product management, shopping cart, and user authentication. Utilized
+                                <strong>HTML</strong>,
                                 <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>Bootstrap</strong>,
                                 <strong>SQL</strong>, and <strong>ASP.NET</strong> technologies.
                             </p>
@@ -166,10 +170,107 @@
                 </div>
             </div>
         </section>
+        <!-- skill-bar -->
+        <section id="skill">
+            <div class="container">
+                <h2 class="section-title">Skills & Proficiency</h2>
+                <div class="bottom-line"></div>
+                <div class="skill-cards my-3">
+                    <div class="skill-card">
+                        <div class="skill-bar">
+                            <div class="outer">
+                                <div class="inner">
+                                    <div class="number">80%</div>
+                                </div>
+                            </div>
+                            <svg width="160px" height="160px">
+                                <defs>
+                                    <linearGradient id="linearGradient">
+                                        <stop offset="0%" stop-color="#4A014A" />
+                                        <stop offset="100%" stop-color="#9b0e7d" />
+                                    </linearGradient>
+                                </defs>
+                                <circle id="circle1" cx="80" cy="80" r="70" />
+                            </svg>
+                        </div>
+                        <div class="skill-content">
+                            <h3>Frontend</h3>
+                            <p>HTML, CSS, JS, Bootstrap</p>
+                        </div>
+                    </div>
+                     <div class="skill-card">
+                        <div class="skill-bar">
+                            <div class="outer">
+                                <div class="inner">
+                                    <div class="number">70%</div>
+                                </div>
+                            </div>
+                            <svg width="160px" height="160px">
+                                <defs>
+                                    <linearGradient id="linearGradient2">
+                                        <stop offset="0%" stop-color="#cc3f47" />
+                                        <stop offset="100%" stop-color="#aa2068" />
+                                    </linearGradient>
+                                </defs>
+                                <circle id="circle2" cx="80" cy="80" r="70" />
+                            </svg>
+                        </div>
+                        <div class="skill-content">
+                            <h3>Backend</h3>
+                            <p>ASP.NET, SQL Server</p>
+                        </div>
+                    </div>
+                     <div class="skill-card">
+                        <div class="skill-bar">
+                            <div class="outer">
+                                <div class="inner">
+                                    <div class="number">50%</div>
+                                </div>
+                            </div>
+                            <svg width="160px" height="160px">
+                                <defs>
+                                    <linearGradient id="linearGradient3">
+                                        <stop offset="0%" stop-color="#de4a46" />
+                                        <stop offset="100%" stop-color="#ec7337" />
+                                    </linearGradient>
+                                </defs>
+                                <circle id="circle3" cx="80" cy="80" r="70" />
+                            </svg>
+                        </div>
+                        <div class="skill-content">
+                            <h3>Mobile</h3>
+                            <p>Flutter Basics</p>
+                        </div>
+                    </div>
+                     <div class="skill-card">
+                        <div class="skill-bar">
+                            <div class="outer">
+                                <div class="inner">
+                                    <div class="number">75%</div>
+                                </div>
+                            </div>
+                            <svg width="160px" height="160px">
+                                <defs>
+                                    <linearGradient id="linearGradient4">
+                                        <stop offset="0%" stop-color="#f47a61" />
+                                        <stop offset="100%" stop-color="#f9a319" />
+                                    </linearGradient>
+                                </defs>
+                                <circle id="circle4" cx="80" cy="80" r="70" />
+                            </svg>
+                        </div>
+                        <div class="skill-content">
+                            <h3>Design</h3>
+                            <p>Figma, UI Principles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- tools -->
         <section id="tool">
             <div class="container ">
-                <h2 class="section-title">Tech Tools</h2>
+                <h2 class="section-title">Tools I Use</h2>
                 <div class="bottom-line"></div>
                 <div class="tools my-3">
                     <div class="tool-box">
@@ -281,8 +382,10 @@
         const btn = document.querySelector('.btn.animate__animated');
 
         btn.addEventListener('animationend', () => {
-        btn.classList.remove('animate__animated', 'animate__fadeInDown');
-    });
+            btn.classList.remove('animate__animated', 'animate__fadeInDown');
+        });
+
+        const number = document.getElementById('number');
 
     </script>
 </body>

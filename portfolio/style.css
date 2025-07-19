@@ -571,6 +571,25 @@ circle {
     align-items: center;
     justify-content: center;
 }
+#project .project-navbar ul{
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    justify-content: center;
+}
+#project .project-navbar ul li{
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+#project .project-navbar ul li.active,
+#project .project-navbar ul li:hover
+{
+    background-color: var(--dark-gray);
+    border: 1px solid var(--primary-color);
+}
+
 #project .projects{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px, 1fr) );

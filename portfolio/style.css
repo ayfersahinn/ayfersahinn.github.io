@@ -4,6 +4,7 @@
     --secondary-color: #F09C2A;
     --gray-color: #9e9c9c;
     --dark-gray: #202023;
+    --bg-color: #18181a;
 }
 
 html {
@@ -21,7 +22,7 @@ body {
     font-family: "Prompt", sans-serif;
     font-size: 1.6rem;
     font-weight: 300;
-    background-color: #18181a;
+    background-color: var(--bg-color);
     color: var(--white-color);
 }
 
@@ -33,9 +34,11 @@ a {
 ul {
     list-style: none;
 }
-.full-height{
+
+.full-height {
     height: 100vh;
 }
+
 .my-5 {
     margin: 10rem 0;
 }
@@ -51,6 +54,7 @@ ul {
 .my-2 {
     margin: 3.2rem 0;
 }
+
 .btn {
     color: var(--white-color);
     font-size: 1.6rem;
@@ -253,9 +257,82 @@ ul {
 }
 
 /* about */
-#about .about-text p {
+#about .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+}
+
+#about .about-content p {
     font-size: 2rem;
     text-align: center;
+}
+
+#about .about-cards {
+    color: var(--gray-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4.8rem;
+}
+
+#about .about-cards .about-card {
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 2rem;
+    border: 1px solid var(--dark-gray);
+    background-color: var(--bg-color);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 1.2rem;
+    position: relative;
+}
+
+#about .about-cards .about-card p {
+    font-size: 1.6rem;
+}
+
+#about .about-cards .about-card i {
+    font-size: 10rem;
+    color: var(--white-color);
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.about-card::after,
+.about-card::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #880088);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: .3rem;
+    border-radius: 1.2rem;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+.about-card::before {
+    filter: blur(.3rem);
 }
 
 /* experience */
@@ -411,7 +488,6 @@ ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 3.6rem;
-   
 }
 
 #skill .skill-cards .skill-card {

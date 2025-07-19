@@ -563,7 +563,99 @@ circle {
     display: block;
     opacity: 1;
 }
+/* projects */
+#project{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#project .projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr) );
+    gap: 2.4rem;
+}
+#project .projects .project-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--dark-gray);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 1.2rem; 
+    position: relative;
+    overflow: hidden;
+}
+.projects .project-card .project-img{
+    max-height: 200px;
+    width: 100%;
+}
+.projects .project-card .project-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    display: block;
+    transition: transform .5s;
+}
+.project-card:hover .project-img img{
+    transform: scale(1.1);
+}
+.projects .project-card .project-content-box{
+    height: 0;
+    width: 100%;
+    padding: 0 3rem;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: .5rem;
+    background: linear-gradient(0deg, rgba(136, 0, 136, 1) 0%, rgba(170, 32, 104, 1) 50%, rgba(204, 63, 71, 1) 100%);
+    overflow: hidden;
+    transition: all .3s;
 
+}
+.project-card:hover .project-content-box{
+    height: 100%;
+}
+.projects .project-card .project-content-box h3{
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.projects .project-card .project-content-box p{
+    color: var(--white-color);
+    font-size: 1.4rem;
+    text-align: justify;
+}
+.project-card .project-content-box a{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    display: inline-block; 
+    transform-origin: left center;
+}
+.project-card .project-content-box a,
+.project-card .project-content-box i {
+    transition: all 0.3s ease-in-out;
+}
+.project-card .project-content-box a:hover {
+    transform: scale(1.1);
+    color: var(--secondary-color);
+}
+.project-card .project-content-box a:hover i {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+.project-card .project-content-box i{
+    font-size: 1.2rem;
+    margin-right: .5rem;
+   
+}
 /* contact */
 #contact{
     height: 100vh;

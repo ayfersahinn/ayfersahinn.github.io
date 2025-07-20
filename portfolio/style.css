@@ -186,7 +186,7 @@ ul {
     display: flex;
     height: 80vh;
     padding: 3.2rem;
-    background-color: var(--bg-color); 
+    background-color: var(--bg-color);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 1.6rem;
     gap: 10rem;
@@ -256,8 +256,9 @@ ul {
     display: inline-block;
     color: var(--gray-color);
 }
+
 /* sidebar */
-aside #sidebar ul{
+aside #sidebar ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -272,15 +273,19 @@ aside #sidebar ul{
     border-radius: 1.2rem;
     padding: 1.6rem;
 }
-aside #sidebar ul li a i{
+
+aside #sidebar ul li a i {
     font-size: 2rem;
     color: var(--gray-color);
     transition: all .3s ease-in-out;
 
 }
-aside #sidebar ul li a i:hover{
+
+aside #sidebar ul li a i:hover {
     color: var(--primary-color);
+    transform: scale(1.2);
 }
+
 /* about */
 #about .about-content {
     display: flex;
@@ -751,24 +756,24 @@ circle {
     text-align: justify;
 }
 
-.project-card .project-content-box a {
+.project-card .project-content-box .trigger-btn {
     margin-top: 2rem;
     font-size: 1.2rem;
     display: inline-block;
     transform-origin: left center;
 }
 
-.project-card .project-content-box a,
+.project-card .project-content-box .trigger-btn,
 .project-card .project-content-box i {
     transition: all 0.3s ease-in-out;
 }
 
-.project-card .project-content-box a:hover {
+.project-card .project-content-box .trigger-btn:hover {
     transform: scale(1.1);
     color: var(--secondary-color);
 }
 
-.project-card .project-content-box a:hover i {
+.project-card .project-content-box .trigger-btn:hover i {
     color: var(--secondary-color);
     transform: scale(1.1);
 }
@@ -776,6 +781,119 @@ circle {
 .project-card .project-content-box i {
     font-size: 1.2rem;
     margin-right: .5rem;
+}
+
+.hidden-checkbox {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+    z-index: 1000;
+}
+
+.popup-overlay .popup-content {
+    background-color: var(--bg-color);
+    padding: 2.4rem;
+    width: 90%;
+    max-width: 50%;
+    border-radius: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: all .3s ease;
+    position: relative;
+}
+.popup-overlay .popup-content .popup-left-side{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+    font-size: 1.6rem;
+}
+.popup-overlay .popup-content .popup-left-side p{
+    font-size: 1.6rem;
+    color: var(--gray-color);
+
+}
+.popup-overlay .popup-content h2{
+    font-weight: 600;
+    font-size: 3.2rem;
+    color: var(--white-color);
+}
+.popup-overlay .popup-content h4{
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--gray-color);
+    padding-top: 1.6rem;
+}
+.popup-overlay .popup-content h4 i{
+    font-size: 1.6rem;
+    margin-right: 1rem;
+}
+.popup-overlay .popup-content ul{
+    list-style:circle;
+    padding-left: 4.3rem;
+    padding-bottom: 1.6rem;
+    color: var(--gray-color);
+}
+.popup-overlay .popup-content .links{
+    display: flex;
+    gap: 3rem;
+}
+.popup-overlay .popup-content .links a i{
+    margin-left: 1rem;
+    font-size: 1.6rem; 
+}
+.popup-overlay .popup-content .links a{
+    transition: all .3s ease;
+    color: var(--primary-color);
+    background-color: transparent;
+    border-radius: 1.2rem;
+    padding: .5rem;
+}
+.popup-overlay .popup-content .links a:hover{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border-radius: 1.2rem;
+    padding: .5rem;
+}
+#project-toggle:checked~.popup-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+#project-toggle2:checked~.popup-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+#project-toggle3:checked~.popup-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-overlay .popup-content .close-btn {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    font-size: 4.8rem;
+    cursor: pointer;
+    color: var(--gray-color);
+    transition: all .3s ease;
+}
+.popup-overlay .popup-content .close-btn:hover{
+    transform: scale(1.2);
 }
 
 /* contact */

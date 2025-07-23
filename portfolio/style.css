@@ -282,7 +282,7 @@ aside #sidebar ul li a i {
 }
 
 aside #sidebar ul li a i:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     transform: scale(1.2);
 }
 

@@ -745,7 +745,7 @@ circle {
   font-size: 1.4rem;
   display: flex;
   flex-direction: column;
-  text-align: center;
+
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -983,6 +983,9 @@ input[type="checkbox"]:checked + label + .popup-overlay {
   padding: 2rem;
   transform: translateY(100%);
   transition: all 0.7s ease;
+}
+.activity-text h4 {
+  font-weight: 500;
 }
 .activity-card:hover .activity-text {
   height: 100%;

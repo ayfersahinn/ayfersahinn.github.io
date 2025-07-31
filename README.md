@@ -25,8 +25,8 @@ Hello! I’m Ayfer Şahin. This repository contains my personal portfolio websit
 Feel free to reach out for feedback or collaboration:
 
 - Email: ayfers547@gmail.com  
-- LinkedIn: [linkedin.com/in/ayfersahin](https://linkedin.com/in/ayfersahin)  
-- GitHub: [github.com/ayfersahinn](https://www.linkedin.com/in/ayfer-%C5%9Fahin/)
+- LinkedIn: [linkedin.com/in/ayfersahin](https://www.linkedin.com/in/ayfer-%C5%9Fahin/)  
+- GitHub: [github.com/ayfersahinn](https://github.com/ayfersahinn)
 
 ---
 

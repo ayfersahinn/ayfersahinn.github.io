@@ -9,19 +9,14 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="public/fontawesome-free-6.7.2-web/css/all.min.css"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+
+    <link rel="stylesheet" href="public/swiper/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="style.css" />
     <title>Ayfer Şahin</title>
@@ -29,7 +24,7 @@
 
   <body>
     <!-- header -->
-    <header>
+    <header class="container">
       <nav id="navbar">
         <a href="#" class="logo">{ <span>Ayfer Şahin</span> }</a>
         <ul class="nav-items">
@@ -39,7 +34,7 @@
           <li class="nav-item"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="container content-header">
+      <div class="content-header">
         <div class="main-content">
           <div
             class="image-box animate__animated animate__fadeIn"
@@ -50,10 +45,10 @@
           <div class="main-text">
             <div class="titles animate__animated animate__fadeInDown">
               <h1>Hi.<span> I'm Ayfer.</span></h1>
-              <h3>
+              <h2>
                 Blending design with development for meaningful digital
                 experiences.
-              </h3>
+              </h2>
             </div>
             <div class="intro-notes animate__animated animate__fadeInDown">
               <p>
@@ -89,34 +84,71 @@
         <section id="sidebar">
           <ul>
             <li>
-              <a href="index.html"><i class="fa-solid fa-house"></i></a>
+              <a href="index.html" data-anim=""
+                ><i class="fa-solid fa-house"></i
+              ></a>
             </li>
             <li>
-              <a href="#about"><i class="fa-solid fa-user"></i></a>
+              <a
+                href="#about"
+                data-anim="animate__slideInDown"
+                class="sidebar-link"
+                ><i class="fa-solid fa-user"></i
+              ></a>
             </li>
             <li>
-              <a href="#experience"><i class="fa-solid fa-briefcase"></i></a>
+              <a
+                href="#experience"
+                data-anim="animate__slideInDown"
+                class="sidebar-link"
+                ><i class="fa-solid fa-briefcase"></i
+              ></a>
             </li>
             <li>
-              <a href="#skill"><i class="fa-solid fa-chart-pie"></i></a>
+              <a
+                href="#skill"
+                data-anim="animate__slideInDown"
+                class="sidebar-link"
+                ><i class="fa-solid fa-chart-pie"></i
+              ></a>
             </li>
             <li>
-              <a href="#tool"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+              <a
+                href="#tool"
+                data-anim="animate__slideInDown"
+                class="sidebar-link"
+                ><i class="fa-solid fa-screwdriver-wrench"></i
+              ></a>
             </li>
             <li>
-              <a href="#project"><i class="fa-solid fa-folder-plus"></i></a>
+              <a
+                href="#project"
+                data-anim="animate__slideInDown"
+                class="sidebar-link"
+                ><i class="fa-solid fa-folder-plus"></i
+              ></a>
             </li>
             <li>
-              <a href="#activity"><i class="fa-solid fa-rocket"></i></a>
+              <a
+                href="#activity"
+                data-anim="animate__fadeInLeft"
+                class="sidebar-link"
+                ><i class="fa-solid fa-rocket"></i
+              ></a>
             </li>
             <li>
-              <a href="#contact"><i class="fa-solid fa-id-card-clip"></i></a>
+              <a
+                href="#contact"
+                data-anim="animate__slideInDown"
+                class="sidebar-link"
+                ><i class="fa-solid fa-id-card-clip"></i
+              ></a>
             </li>
           </ul>
         </section>
       </aside>
       <!-- about -->
-      <section id="about" class="full-height">
+      <section id="about" class="full-height animated-section">
         <div class="container">
           <h2 class="section-title">About Me</h2>
           <div class="bottom-line"></div>
@@ -172,9 +204,9 @@
             <div class="checkpoint">
               <div class="experience-card">
                 <div class="experience-title">
-                  <h4>
+                  <h3>
                     <i class="fa-solid fa-calculator"></i>Junior Accountant
-                  </h4>
+                  </h3>
                   <p class="date"><strong>Date:</strong> 02/2025 - 05/2025</p>
                 </div>
                 <p class="company-name">
@@ -191,10 +223,10 @@
             <div class="checkpoint">
               <div class="experience-card">
                 <div class="experience-title">
-                  <h4>
+                  <h3>
                     <i class="fa-brands fa-instagram"></i>Social Media Manager -
                     Freelancer
-                  </h4>
+                  </h3>
                   <p class="date"><strong>Date:</strong> 08/2024 - 02/2025</p>
                 </div>
                 <p class="company-name">
@@ -210,9 +242,9 @@
             <div class="checkpoint">
               <div class="experience-card">
                 <div class="experience-title">
-                  <h4>
+                  <h3>
                     <i class="fa-solid fa-code"></i>Full-stack Developer Intern
-                  </h4>
+                  </h3>
                   <p class="date"><strong>Date:</strong> 03/2024 - 07/2024</p>
                 </div>
                 <p class="project-name"><strong>Project:</strong> e-SHOES</p>
@@ -234,10 +266,10 @@
             <div class="checkpoint">
               <div class="experience-card">
                 <div class="experience-title">
-                  <h4>
+                  <h3>
                     <i class="fa-solid fa-language"></i>English Instructor -
                     Freelancer
-                  </h4>
+                  </h3>
                   <p class="date"><strong>Date:</strong> 02/2024 - 05/2024</p>
                 </div>
                 <p class="description">
@@ -251,10 +283,10 @@
             <div class="checkpoint">
               <div class="experience-card">
                 <div class="experience-title">
-                  <h4>
+                  <h3>
                     <i class="fa-solid fa-mobile-screen"></i>Mobile Development
                     Instructor
-                  </h4>
+                  </h3>
                   <p class="date"><strong>Date:</strong> 06/2023 - 08/2023</p>
                 </div>
                 <p class="company-name">
@@ -270,9 +302,9 @@
             <div class="checkpoint">
               <div class="experience-card">
                 <div class="experience-title">
-                  <h4>
+                  <h3>
                     <i class="fa-solid fa-gamepad"></i>Game Developer Intern
-                  </h4>
+                  </h3>
                   <p class="date"><strong>Date:</strong> 07/2022 - 09/2022</p>
                 </div>
 
@@ -289,7 +321,7 @@
             <div class="checkpoint">
               <div class="experience-card">
                 <div class="experience-title">
-                  <h4><i class="fa-solid fa-user-tie"></i>Consultant</h4>
+                  <h3><i class="fa-solid fa-user-tie"></i>Consultant</h3>
                   <p class="date"><strong>Date:</strong> 07/2019 - 09/2019</p>
                 </div>
 
@@ -487,7 +519,7 @@
                     >
                     <div class="popup-scroll-area">
                       <img src="img/dizi-blog.png" alt="" />
-                      <h2>Sahne Arası</h2>
+                      <h3>Sahne Arası</h3>
                       <div class="popup-left-side">
                         <p>
                           A blog-based content sharing platform where users can
@@ -549,7 +581,7 @@
                     >
                     <div class="popup-scroll-area">
                       <img src="img/dizi-blog.png" alt="" />
-                      <h2>Sahne Arası</h2>
+                      <h3>Sahne Arası</h3>
                       <div class="popup-left-side">
                         <p>
                           A blog-based content sharing platform where users can
@@ -611,7 +643,7 @@
                     >
                     <div class="popup-scroll-area">
                       <img src="img/dizi-blog.png" alt="" />
-                      <h2>Sahne Arası</h2>
+                      <h3>Sahne Arası</h3>
                       <div class="popup-left-side">
                         <p>
                           A blog-based content sharing platform where users can
@@ -739,7 +771,7 @@
               <label for="activity-toggle" class="close-btn">&times;</label>
               <div class="popup-scroll-area">
                 <img src="img/btk-python-bootcamp.jpeg" alt="" />
-                <h2>Python-Based Visual Programming Course</h2>
+                <h3>Python-Based Visual Programming Course</h3>
                 <div class="popup-left-side">
                   <p>
                     I attended an in-person workshop organized by BTK Academy.
@@ -778,7 +810,7 @@
               <label for="activity-toggle-2" class="close-btn">&times;</label>
               <div class="popup-scroll-area">
                 <img src="img/habitat.jpg" alt="" />
-                <h2>Online Cybersecurity Trainer Course</h2>
+                <h3>Online Cybersecurity Trainer Course</h3>
                 <div class="popup-left-side">
                   <p>
                     This training was part of a project carried out in
@@ -803,7 +835,7 @@
                     <a
                       href="https://habitatdernegi.org/dijital-donusum/kontrol-bende-2/"
                       target="_blank"
-                      >Live Demo<i
+                      >Visit Website<i
                         class="fa-solid fa-arrow-up-right-from-square"
                       ></i
                     ></a>
@@ -817,7 +849,7 @@
               <label for="activity-toggle-3" class="close-btn">&times;</label>
               <div class="popup-scroll-area">
                 <img src="img/gençstem.JPG" alt="" />
-                <h2>GencSTEM Association Member</h2>
+                <h3>GencSTEM Association Member</h3>
                 <div class="popup-left-side">
                   <p>
                     I have been a member of GencSTEM, an organization aiming to
@@ -844,7 +876,7 @@
                   </ul>
                   <div class="links">
                     <a href="https://www.gencstem.com/" target="_blank"
-                      >Live Demo<i
+                      >Visit Website<i
                         class="fa-solid fa-arrow-up-right-from-square"
                       ></i>
                     </a>
@@ -858,11 +890,11 @@
               <label for="activity-toggle-4" class="close-btn">&times;</label>
               <div class="popup-scroll-area">
                 <img src="img/gap.JPG" alt="" />
-                <h2>
+                <h3>
                   <i class="fa-solid fa-medal"></i>
                   GAP Young Ideas Competition – Third Place Winner
                   <i class="fa-solid fa-medal"></i>
-                </h2>
+                </h3>
                 <div class="popup-left-side">
                   <p>
                     I participated in the 3-day GAP Young Ideas Social
@@ -982,6 +1014,35 @@
       btn.addEventListener("animationend", () => {
         btn.classList.remove("animate__animated", "animate__fadeInDown");
       });
+
+      const links = document.querySelectorAll(".sidebar-link");
+
+      links.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href").substring(1);
+          const anim = this.dataset.anim || "animate__fadeIn";
+          const target = document.getElementById(targetId);
+
+          target.classList.remove("animate__animated", anim);
+
+          setTimeout(() => {
+            target.classList.add("animate__animated", anim);
+
+            target.addEventListener(
+              "animationend",
+              () => {
+                target.classList.remove("animate__animated", anim);
+              },
+              { once: true }
+            );
+          }, 300);
+
+          target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
       document.addEventListener("DOMContentLoaded", function () {
         var swiper = new Swiper(".swiper", {
           spaceBetween: 32,
@@ -1012,6 +1073,7 @@
         });
       });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="public/swiper/swiper-bundle.min.js"></script>
   </body>
 </html>

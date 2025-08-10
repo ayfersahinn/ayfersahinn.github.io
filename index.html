@@ -196,13 +196,15 @@
           <div class="bottom-line"></div>
           <div class="section-navbar my-2">
             <ul>
-              <li class="active"><a href="">Relevant Experience</a></li>
-              <li><a href="">Other Experience</a></li>
+              <li class="experience-active">
+                <a href="" data-category="relevant">Relevant Experience</a>
+              </li>
+              <li><a href="" data-category="other">Other Experience</a></li>
             </ul>
           </div>
           <div class="timeline">
             <div class="checkpoint">
-              <div class="experience-card">
+              <div class="experience-card" data-category="other">
                 <div class="experience-title">
                   <h3>
                     <i class="fa-solid fa-calculator"></i>Junior Accountant
@@ -221,7 +223,7 @@
               </div>
             </div>
             <div class="checkpoint">
-              <div class="experience-card">
+              <div class="experience-card" data-category="other">
                 <div class="experience-title">
                   <h3>
                     <i class="fa-brands fa-instagram"></i>Social Media Manager -
@@ -240,7 +242,7 @@
               </div>
             </div>
             <div class="checkpoint">
-              <div class="experience-card">
+              <div class="experience-card" data-category="relevant">
                 <div class="experience-title">
                   <h3>
                     <i class="fa-solid fa-code"></i>Full-stack Developer Intern
@@ -264,7 +266,7 @@
               </div>
             </div>
             <div class="checkpoint">
-              <div class="experience-card">
+              <div class="experience-card" data-category="other">
                 <div class="experience-title">
                   <h3>
                     <i class="fa-solid fa-language"></i>English Instructor -
@@ -281,7 +283,7 @@
               </div>
             </div>
             <div class="checkpoint">
-              <div class="experience-card">
+              <div class="experience-card" data-category="relevant">
                 <div class="experience-title">
                   <h3>
                     <i class="fa-solid fa-mobile-screen"></i>Mobile Development
@@ -300,7 +302,7 @@
               </div>
             </div>
             <div class="checkpoint">
-              <div class="experience-card">
+              <div class="experience-card" data-category="relevant">
                 <div class="experience-title">
                   <h3>
                     <i class="fa-solid fa-gamepad"></i>Game Developer Intern
@@ -318,7 +320,7 @@
                 </p>
               </div>
             </div>
-            <div class="checkpoint">
+            <div class="checkpoint" data-category="other">
               <div class="experience-card">
                 <div class="experience-title">
                   <h3><i class="fa-solid fa-user-tie"></i>Consultant</h3>
@@ -485,14 +487,16 @@
           <div class="bottom-line"></div>
           <div class="section-navbar my-2">
             <ul>
-              <li class="active"><a href="">Frontend</a></li>
-              <li><a href="">Backend</a></li>
-              <li><a href="">Mobile</a></li>
-              <li><a href="">UI/UX</a></li>
+              <li class="project-active">
+                <a href="" data-category="frontend">Frontend</a>
+              </li>
+              <li><a href="" data-category="backend">Backend</a></li>
+              <li><a href="" data-category="mobile">Mobile</a></li>
+              <li><a href="" data-category="uiux">UI/UX</a></li>
             </ul>
           </div>
           <div class="projects my-2">
-            <div class="project-card">
+            <div class="project-card" data-category="frontend">
               <div class="project-img">
                 <img src="img/dizi-blog.png" alt="" />
               </div>
@@ -554,7 +558,7 @@
                 </div>
               </div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-category="frontend">
               <div class="project-img">
                 <img src="img/dizi-blog.png" alt="" />
               </div>
@@ -616,7 +620,7 @@
                 </div>
               </div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-category="mobile">
               <div class="project-img">
                 <img src="img/dizi-blog.png" alt="" />
               </div>
@@ -1015,8 +1019,99 @@
         btn.classList.remove("animate__animated", "animate__fadeInDown");
       });
 
-      const links = document.querySelectorAll(".sidebar-link");
+      // project section navbar
+      const projectFilterLinks = document.querySelectorAll(".section-navbar a");
+      const projectCards = document.querySelectorAll(".project-card");
 
+      function filterProjects(category, clickedLink) {
+        // Aktif class değiştir
+        projectFilterLinks.forEach((l) =>
+          l.parentElement.classList.remove("project-active")
+        );
+        clickedLink.parentElement.classList.add("project-active");
+
+        // Kartları filtrele
+        projectCards.forEach((card) => {
+          if (category === "all" || card.dataset.category === category) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      projectFilterLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          filterProjects(this.dataset.category, this);
+        });
+      });
+
+      // Sayfa yüklenince otomatik olarak "Frontend" aktif et
+      document.addEventListener("DOMContentLoaded", () => {
+        const frontendLink = document.querySelector(
+          '.section-navbar a[data-category="frontend"]'
+        );
+        if (frontendLink) {
+          filterProjects("frontend", frontendLink);
+        }
+      });
+
+      // experience section navbar
+      const filterLinks = document.querySelectorAll(".section-navbar a");
+      const checkpoints = document.querySelectorAll(".checkpoint");
+
+      function filterExperience(category, clickedLink) {
+        // Aktif link class değişimi
+        filterLinks.forEach((l) =>
+          l.parentElement.classList.remove("experience-active")
+        );
+        clickedLink.parentElement.classList.add("experience-active");
+
+        // Filtreleme
+        checkpoints.forEach((checkpoint) => {
+          const card = checkpoint.querySelector(".experience-card");
+          if (!category || card.dataset.category === category) {
+            checkpoint.style.display = "block";
+          } else {
+            checkpoint.style.display = "none";
+          }
+        });
+
+        // Görünen kartlara yeniden sağ/sol konumlandırma
+        const visibleCheckpoints = Array.from(checkpoints).filter(
+          (c) => c.style.display === "block"
+        );
+
+        visibleCheckpoints.forEach((c, index) => {
+          c.classList.remove("left", "right");
+          if (index % 2 === 0) {
+            c.classList.add("left");
+          } else {
+            c.classList.add("right");
+          }
+        });
+      }
+
+      filterLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          filterExperience(this.dataset.category, this);
+        });
+      });
+
+      // Sayfa yüklenince otomatik olarak "Relevant Experience" aktif et
+      document.addEventListener("DOMContentLoaded", () => {
+        const firstLink = document.querySelector(
+          '.section-navbar a[data-category="relevant"]'
+        );
+        if (firstLink) {
+          filterExperience("relevant", firstLink);
+        }
+      });
+
+      // animasyonlar
+      const links = document.querySelectorAll(".sidebar-link");
       links.forEach((link) => {
         link.addEventListener("click", function (e) {
           e.preventDefault();
@@ -1042,7 +1137,7 @@
           target.scrollIntoView({ behavior: "smooth" });
         });
       });
-
+      // swiper
       document.addEventListener("DOMContentLoaded", function () {
         var swiper = new Swiper(".swiper", {
           spaceBetween: 32,

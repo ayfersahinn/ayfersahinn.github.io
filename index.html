@@ -81,68 +81,72 @@
     <main>
       <!-- sidebar -->
       <aside>
+        <button id="hamburger-btn" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav id="mobile-sidebar" class="mobile-sidebar">
+          <ul>
+            <li>
+              <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li>
+              <a href="#about"><i class="fa-solid fa-user"></i> About</a>
+            </li>
+            <li>
+              <a href="#experience"
+                ><i class="fa-solid fa-briefcase"></i> Experience</a
+              >
+            </li>
+            <li>
+              <a href="#skill"><i class="fa-solid fa-chart-pie"></i> Skills</a>
+            </li>
+            <li>
+              <a href="#tool"
+                ><i class="fa-solid fa-screwdriver-wrench"></i> Tools</a
+              >
+            </li>
+            <li>
+              <a href="#project"
+                ><i class="fa-solid fa-folder-plus"></i> Projects</a
+              >
+            </li>
+            <li>
+              <a href="#activity"
+                ><i class="fa-solid fa-rocket"></i> Activity</a
+              >
+            </li>
+            <li>
+              <a href="#contact"
+                ><i class="fa-solid fa-id-card-clip"></i> Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
         <section id="sidebar">
           <ul>
             <li>
-              <a href="index.html" data-anim=""
-                ><i class="fa-solid fa-house"></i
-              ></a>
+              <a href="index.html"><i class="fa-solid fa-house"></i></a>
             </li>
             <li>
-              <a
-                href="#about"
-                data-anim="animate__slideInDown"
-                class="sidebar-link"
-                ><i class="fa-solid fa-user"></i
-              ></a>
+              <a href="#about"><i class="fa-solid fa-user"></i></a>
             </li>
             <li>
-              <a
-                href="#experience"
-                data-anim="animate__slideInDown"
-                class="sidebar-link"
-                ><i class="fa-solid fa-briefcase"></i
-              ></a>
+              <a href="#experience"><i class="fa-solid fa-briefcase"></i></a>
             </li>
             <li>
-              <a
-                href="#skill"
-                data-anim="animate__slideInDown"
-                class="sidebar-link"
-                ><i class="fa-solid fa-chart-pie"></i
-              ></a>
+              <a href="#skill"><i class="fa-solid fa-chart-pie"></i></a>
             </li>
             <li>
-              <a
-                href="#tool"
-                data-anim="animate__slideInDown"
-                class="sidebar-link"
-                ><i class="fa-solid fa-screwdriver-wrench"></i
-              ></a>
+              <a href="#tool"><i class="fa-solid fa-screwdriver-wrench"></i></a>
             </li>
             <li>
-              <a
-                href="#project"
-                data-anim="animate__slideInDown"
-                class="sidebar-link"
-                ><i class="fa-solid fa-folder-plus"></i
-              ></a>
+              <a href="#project"><i class="fa-solid fa-folder-plus"></i></a>
             </li>
             <li>
-              <a
-                href="#activity"
-                data-anim="animate__fadeInLeft"
-                class="sidebar-link"
-                ><i class="fa-solid fa-rocket"></i
-              ></a>
+              <a href="#activity"><i class="fa-solid fa-rocket"></i></a>
             </li>
             <li>
-              <a
-                href="#contact"
-                data-anim="animate__slideInDown"
-                class="sidebar-link"
-                ><i class="fa-solid fa-id-card-clip"></i
-              ></a>
+              <a href="#contact"><i class="fa-solid fa-id-card-clip"></i></a>
             </li>
           </ul>
         </section>
@@ -194,7 +198,7 @@
         <div class="container">
           <h2 class="section-title">Work Experience</h2>
           <div class="bottom-line"></div>
-          <div class="section-navbar my-2">
+          <div class="section-navbar experience-navbar my-2">
             <ul>
               <li class="experience-active">
                 <a href="" data-category="relevant">Relevant Experience</a>
@@ -320,8 +324,8 @@
                 </p>
               </div>
             </div>
-            <div class="checkpoint" data-category="other">
-              <div class="experience-card">
+            <div class="checkpoint">
+              <div class="experience-card" data-category="other">
                 <div class="experience-title">
                   <h3><i class="fa-solid fa-user-tie"></i>Consultant</h3>
                   <p class="date"><strong>Date:</strong> 07/2019 - 09/2019</p>
@@ -485,7 +489,7 @@
         <div class="container">
           <h2 class="section-title">Projects</h2>
           <div class="bottom-line"></div>
-          <div class="section-navbar my-2">
+          <div class="section-navbar project-navbar my-2">
             <ul>
               <li class="project-active">
                 <a href="" data-category="frontend">Frontend</a>
@@ -620,7 +624,7 @@
                 </div>
               </div>
             </div>
-            <div class="project-card" data-category="mobile">
+            <div class="project-card" data-category="frontend">
               <div class="project-img">
                 <img src="img/dizi-blog.png" alt="" />
               </div>
@@ -1012,6 +1016,21 @@
     </footer>
 
     <script>
+      // hamburger menu
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const mobileSidebar = document.getElementById("mobile-sidebar");
+      const mobileLinks = mobileSidebar.querySelectorAll("a");
+
+      hamburgerBtn.addEventListener("click", () => {
+        mobileSidebar.classList.toggle("active");
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileSidebar.classList.remove("active");
+        });
+      });
+
       // hover efekti ile animasyon çakışmasın diye
       const btn = document.querySelector(".btn.animate__animated");
 
@@ -1020,7 +1039,7 @@
       });
 
       // project section navbar
-      const projectFilterLinks = document.querySelectorAll(".section-navbar a");
+      const projectFilterLinks = document.querySelectorAll(".project-navbar a");
       const projectCards = document.querySelectorAll(".project-card");
 
       function filterProjects(category, clickedLink) {
@@ -1058,7 +1077,7 @@
       });
 
       // experience section navbar
-      const filterLinks = document.querySelectorAll(".section-navbar a");
+      const filterLinks = document.querySelectorAll(".experience-navbar a");
       const checkpoints = document.querySelectorAll(".checkpoint");
 
       function filterExperience(category, clickedLink) {
@@ -1110,33 +1129,6 @@
         }
       });
 
-      // animasyonlar
-      const links = document.querySelectorAll(".sidebar-link");
-      links.forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute("href").substring(1);
-          const anim = this.dataset.anim || "animate__fadeIn";
-          const target = document.getElementById(targetId);
-
-          target.classList.remove("animate__animated", anim);
-
-          setTimeout(() => {
-            target.classList.add("animate__animated", anim);
-
-            target.addEventListener(
-              "animationend",
-              () => {
-                target.classList.remove("animate__animated", anim);
-              },
-              { once: true }
-            );
-          }, 300);
-
-          target.scrollIntoView({ behavior: "smooth" });
-        });
-      });
       // swiper
       document.addEventListener("DOMContentLoaded", function () {
         var swiper = new Swiper(".swiper", {

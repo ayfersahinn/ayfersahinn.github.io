@@ -1057,7 +1057,8 @@ input[type="checkbox"]:checked + label + .popup-overlay {
 #activity-toggle:checked ~ .swiper ~ #popup-1,
 #activity-toggle-2:checked ~ .swiper ~ #popup-2,
 #activity-toggle-3:checked ~ .swiper ~ #popup-3,
-#activity-toggle-4:checked ~ .swiper ~ #popup-4 {
+#activity-toggle-4:checked ~ .swiper ~ #popup-4,
+#activity-toggle-5:checked ~ .swiper ~ #popup-5 {
   opacity: 1;
   visibility: visible;
 }
